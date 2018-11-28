@@ -8,15 +8,18 @@ public class Main {
         int NUMBER_ITEM = 1000000;
         int NUMBER_MAX = 1000000;
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
+
         Random rnd = new Random();
+        long start, finish;
 
         myArrayList.test(myArrayList);
         myArrayList.clean();
-        System.out.println(myArrayList.size());
-        System.out.println(myArrayList.toString());
 
+        start = System.currentTimeMillis();
         for (int i = 0; i < NUMBER_ITEM; i++) {
             myArrayList.insert(rnd.nextInt(NUMBER_MAX));
         }
+        finish = System.currentTimeMillis();
+        System.out.println(finish - start + "ms");
     }
 }
