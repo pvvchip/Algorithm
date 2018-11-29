@@ -12,17 +12,24 @@ public class Main {
 
         myArrayList.test(myArrayList);
 
-        System.out.println("Сортировка методом Выбора");
-        newAL();
-        start = System.currentTimeMillis();
-        myArrayList.selectionSort();
-        finish = System.currentTimeMillis();
-        System.out.println(finish - start + "ms");
+//        System.out.println("Сортировка методом Выбора");
+//        newAL();
+//        start = System.currentTimeMillis();
+//        myArrayList.selectionSort();
+//        finish = System.currentTimeMillis();
+//        System.out.println(finish - start + "ms");
+//
+//        System.out.println("Сортировка методом Вставки");
+//        newAL();
+//        start = System.currentTimeMillis();
+//        myArrayList.insertionSort();
+//        finish = System.currentTimeMillis();
+//        System.out.println(finish - start + "ms");
 
-        System.out.println("Сортировка методом Вставки");
+        System.out.println("Сортировка методом Пузырька");
         newAL();
         start = System.currentTimeMillis();
-        myArrayList.insertionSort();
+        myArrayList.boobleSort();
         finish = System.currentTimeMillis();
         System.out.println(finish - start + "ms");
     }

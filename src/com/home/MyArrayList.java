@@ -128,6 +128,18 @@ public class MyArrayList<Item extends Comparable<Item>> {
         }
     }
 
+    // сортировка методом пузырьков
+    public void boobleSort() {
+        int out, in;
+        for (out = size - 1; out > 1 ; out--) {
+            for (in = 0; in < out; in++) {
+                if (less((Item) list[in+1],(Item) list[in])) {
+                    exch(in, in + 1);
+                }
+            }
+        }
+    }
+
     private boolean less(Item item1, Item item2) {
         return item1.compareTo(item2) < 0;
     }
@@ -152,9 +164,29 @@ public class MyArrayList<Item extends Comparable<Item>> {
         System.out.println(myArrayList.toString());
         System.out.println(myArrayList.find(11));
         System.out.println(myArrayList.find(6));
-        myArrayList.selectionSort();
-//        myArrayList.insertionSort();
+
+        System.out.println("boobleSort");
+        myArrayList.boobleSort();
         System.out.println(myArrayList.toString());
+
+        myArrayList.clean();
+        myArrayList.insert(2);
+        myArrayList.insert(6);
+        myArrayList.insert(4);
+        myArrayList.insert(8);
+        System.out.println("selectionSort");
+        myArrayList.selectionSort();
+        System.out.println(myArrayList.toString());
+
+        myArrayList.clean();
+        myArrayList.insert(2);
+        myArrayList.insert(6);
+        myArrayList.insert(4);
+        myArrayList.insert(8);
+        System.out.println("insertionSort");
+        myArrayList.insertionSort();
+        System.out.println(myArrayList.toString());
+
         System.out.println(myArrayList.binaryFind(11));
         System.out.println(myArrayList.binaryFind(6));
         System.out.println("******** End test");
