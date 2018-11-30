@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
     private static int NUMBER_ITEM = 1000000;
-    private static  int NUMBER_MAX = 1000000;
+    private static int NUMBER_MAX = 1000000;
     private static MyArrayList<Integer> myArrayList = new MyArrayList<>();
 
     public static void main(String[] args) {
@@ -12,19 +12,19 @@ public class Main {
 
         myArrayList.test(myArrayList);
 
-//        System.out.println("Сортировка методом Выбора");
-//        newAL();
-//        start = System.currentTimeMillis();
-//        myArrayList.selectionSort();
-//        finish = System.currentTimeMillis();
-//        System.out.println(finish - start + "ms");
-//
-//        System.out.println("Сортировка методом Вставки");
-//        newAL();
-//        start = System.currentTimeMillis();
-//        myArrayList.insertionSort();
-//        finish = System.currentTimeMillis();
-//        System.out.println(finish - start + "ms");
+        System.out.println("Сортировка методом Выбора");
+        newAL();
+        start = System.currentTimeMillis();
+        myArrayList.selectionSort();
+        finish = System.currentTimeMillis();
+        System.out.println(finish - start + "ms");
+
+        System.out.println("Сортировка методом Вставки");
+        newAL();
+        start = System.currentTimeMillis();
+        myArrayList.insertionSort();
+        finish = System.currentTimeMillis();
+        System.out.println(finish - start + "ms");
 
         System.out.println("Сортировка методом Пузырька");
         newAL();

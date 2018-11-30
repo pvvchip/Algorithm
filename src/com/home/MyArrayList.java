@@ -28,6 +28,18 @@ public class MyArrayList<Item extends Comparable<Item>> {
         list[size++] = item;
     }
 
+    // добавление с сортировкой
+    public void insertSort(Item item) {
+        insert(item);
+        int i = size - 1;
+        while (i > 0 && get(i).compareTo(get(i - 1)) < 0) {
+            Item temp = get(i);
+            set(i, get(i - 1));
+            set(i - 1, temp);
+            i--;
+        }
+    }
+
     public boolean delete(Item item) {
         int i = 0;
         while (i < size && !list[i].equals(item)) {
@@ -63,7 +75,7 @@ public class MyArrayList<Item extends Comparable<Item>> {
         list[index] = item;
     }
 
-//    поиск линейный
+    //    поиск линейный
     public boolean find(Item item) {
         for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
@@ -73,7 +85,7 @@ public class MyArrayList<Item extends Comparable<Item>> {
         return false;
     }
 
-//    поиск двоичный
+    //    поиск двоичный
 //    предворительно нужно сделать сортировку
     public boolean binaryFind(Item item) {
         int low = 0;
@@ -82,11 +94,9 @@ public class MyArrayList<Item extends Comparable<Item>> {
             int mid = low + (hi - low) / 2;
             if (item.compareTo(this.get(mid)) < 0) {
                 hi = mid - 1;
-            }
-            else if (item.compareTo(this.get(mid)) > 0) {
+            } else if (item.compareTo(this.get(mid)) > 0) {
                 low = mid + 1;
-            }
-            else {
+            } else {
                 return true;
             }
         }
@@ -131,9 +141,9 @@ public class MyArrayList<Item extends Comparable<Item>> {
     // сортировка методом пузырьков
     public void boobleSort() {
         int out, in;
-        for (out = size - 1; out > 1 ; out--) {
+        for (out = size - 1; out > 1; out--) {
             for (in = 0; in < out; in++) {
-                if (less((Item) list[in+1],(Item) list[in])) {
+                if (less((Item) list[in + 1], (Item) list[in])) {
                     exch(in, in + 1);
                 }
             }
@@ -187,6 +197,12 @@ public class MyArrayList<Item extends Comparable<Item>> {
         myArrayList.insertionSort();
         System.out.println(myArrayList.toString());
 
+        System.out.println("Бинарный поиск 11 , 6");
+        myArrayList.clean();
+        myArrayList.insertSort(2);
+        myArrayList.insertSort(6);
+        myArrayList.insertSort(4);
+        myArrayList.insertSort(8);
         System.out.println(myArrayList.binaryFind(11));
         System.out.println(myArrayList.binaryFind(6));
         System.out.println("******** End test");
