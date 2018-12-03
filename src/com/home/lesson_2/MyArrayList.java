@@ -1,4 +1,4 @@
-package com.home;
+package com.home.lesson_2;
 
 public class MyArrayList<Item extends Comparable<Item>> {
     private int size = 0;
