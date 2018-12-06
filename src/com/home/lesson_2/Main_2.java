@@ -1,8 +1,8 @@
-package com.home;
+package com.home.lesson_2;
 
 import java.util.Random;
 
-public class Main {
+public class Main_2 {
     private static int NUMBER_ITEM = 1000000;
     private static int NUMBER_MAX = 1000000;
     private static MyArrayList<Integer> myArrayList = new MyArrayList<>();
